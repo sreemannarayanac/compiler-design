@@ -1,3 +1,7 @@
 /.vscode
 *.exe
 *.out
+*.nix
+*.blob
+*.replit
+*.h
