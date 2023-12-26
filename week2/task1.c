@@ -8,19 +8,7 @@ typedef struct {
 } Identifier;
 
 int isValidIdentifier(char identifier[]) {
-    int length = strlen(identifier);
-    if (length == 0 || isdigit(identifier[0])) {
-        return 0; // Not a valid start
-    }
-  
-    for (int i = 1; i < length; i++) {
-        if (identifier[i]!='_') {
-          if (!isalnum(identifier[i]))
-            return 0; // Contains an invalid character
-        }
-    }
-
-    return 1; // Valid identifier
+    return strlen(identifier) > 0 && isalpha(identifier[0]) || identifier[0] == '_';
 }
 
 int isVariable(char identifier[]) {
@@ -40,7 +28,7 @@ int isFunction(char identifier[]) {
 
 int isStructure(char identifier[]) {
     int length = strlen(identifier);
-    return length > 0 && identifier[length - 1] == '_';
+    return length > 0 && identifier[length - 1] == '}';
 }
 
 void parseIdentifier(char identifier[], Identifier *id) {
