@@ -1,56 +1,32 @@
 #include <stdio.h>
-#include <stdbool.h>
-
-bool isDigit(char c) {
-    return (c >= '0' && c <= '9');
-}
-
-bool isInteger(char* str) {
-    int i = 0;
-    if (str[i] == '-' || str[i] == '+') {
-        i++;
-    }
-    while (str[i] != '\0') {
-        if (!isDigit(str[i])) {
-            return false;
-        }
-        i++;
-    }
-    return true;
-}
-
-bool isReal(char* str) {
-    int i = 0;
-    if (str[i] == '-' || str[i] == '+') {
-        i++;
-    }
-    bool hasDot = false;
-    while (str[i] != '\0') {
-        if (str[i] == '.') {
-            if (hasDot) {
-                return false;
-            }
-            hasDot = true;
-        } else if (!isDigit(str[i])) {
-            return false;
-        }
-        i++;
-    }
-    return hasDot;
-}
+#include <ctype.h>
 
 int main() {
     char str[100];
     printf("Enter a constant: ");
     scanf("%s", str);
 
-    if (isInteger(str)) {
-        printf("The constant is an integer.\n");
-    } else if (isReal(str)) {
-        printf("The constant is a real number.\n");
-    } else {
-        printf("The constant is neither an integer nor a real number.\n");
-    }
+    int flag=0; // 0 for integer, 1 for real
 
-    return 0;
+    for (int i=0; str[i]!='\0'; i++) {
+        if (str[i] == '.') {
+            flag = 1;
+            printf("Real constant\n");
+            return 0;
+        } 
+        else if (i!=0 && (str[i] == '-' || str[i] == '+')) {
+            printf("Invalid constant\n");
+            return 0;
+        }
+        else if (i==0 && str[i+1]=='\0' && (str[i] == '-' || str[i] == '+')) {
+            printf("Invalid constant\n");
+            return 0;
+        
+        }
+        else if (!isdigit(str[i])) {
+            printf("Invalid constant\n");
+            return 0;
+        }
+    }
+    printf("Integer constant\n");
 }
