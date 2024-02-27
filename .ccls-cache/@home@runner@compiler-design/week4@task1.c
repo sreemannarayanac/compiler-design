@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+int main() {
+    int num1 = 10;
+    float num2 = 3.14;
+    char letter = 'A';
+
+    printf("Hello, World!\n");
+
+    return 0;
+}
