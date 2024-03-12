@@ -1,0 +1,53 @@
+ Unknown Token: #
+Identifier: include
+Relational Operator: <
+Identifier: stdio
+Unknown Token: .
+Identifier: h
+Relational Operator: >
+Keyword: int
+Identifier: main
+Open Parenthesis
+Close Parenthesis
+Open Curly Brace
+Keyword: int
+Identifier: num1
+Assignment Operator
+Constant: 10
+Semicolon
+Keyword: float
+Identifier: num2
+Assignment Operator
+Constant: 3.14
+Semicolon
+Keyword: char
+Identifier: letter
+Assignment Operator
+Unknown Token: '
+Identifier: A
+Unknown Token: '
+Semicolon
+Control Keyword: if
+Open Parenthesis
+Identifier: num1
+Relational Operator: >
+Constant: 5
+Close Parenthesis
+Open Curly Brace
+Identifier: printf
+Open Parenthesis
+Unknown Token: "
+Identifier: Hello
+Unknown Token: ,
+Identifier: World
+Unknown Token: !
+Unknown Token: \
+Identifier: n
+Unknown Token: "
+Close Parenthesis
+Semicolon
+Close Curly Brace
+Identifier: return
+Constant: 0
+Semicolon
+Close Curly Brace
